@@ -13,3 +13,10 @@ public class GmiBankStepDefinitions {
     }
 
 }
+//
+// kendi branch imizi olsuturduktan sonra framework de degisiklik yaptiktan sonra ilk kez githuba a gondermek
+//istedigimizde 3. adimdaki islemi bir kereye mahsus uygulanarak github da kendi adimiza branch olusturulmus olur.
+//bundan sonraki islemlerde 3. adimda sadece git push (kendi branch imiz) demek yeterlidir.
+// git add .
+// git commit -m "first commit"
+//git push --set-upstream origin (branch ismi verecegiz buraya kendi adimizi verebiliriz.)
