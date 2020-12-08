@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="1.48">
-    <testcase classname="Database Test" name="User connect database" time="1.28">
-        <system-out><![CDATA[Given user connect database and print all data..............................passed
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="38.105">
+<testcase classname="Yeni Customer Olusturma" name="TC09_kullanici yeni customer olusturur" time="37.32">
+<system-out><![CDATA[Given kullanici gmibank login sayfasina gider...............................passed
+And Employee UserName girer.................................................passed
+And Employee password girer.................................................passed
+And Employee signIn tiklar..................................................passed
+And Employee myOperations a tiklar..........................................passed
+And Employee My Oprations'dan Manage Customers a tiklar.....................passed
+And Employee Create a new customer'a tiklar.................................passed
+And Employee SSN textbox'ina daha once kayit yapmis customer'in SSN' ini girer.passed
+Then Employee SSN search butonuna tiklayarak customerin adi "employee17" soyadi "memur" email "employee_17@gmail.com" adres "Team1717 street 67800 DC" mobilenumber "444-171-1717" ssn "171-17-1717" kayit bilgilerini karsilastirir.passed
 ]]></system-out>
-    </testcase>
+</testcase>
 </testsuite>
