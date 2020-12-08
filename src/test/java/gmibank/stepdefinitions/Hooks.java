@@ -5,6 +5,7 @@ import gmibank.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import org.junit.Ignore;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -15,15 +16,19 @@ public class Hooks {
         public void setUp(){
             //System.out.println("setUp Çalıştı.");
         }
-        @After
+        /*
+    @After
         public void tearDown(Scenario scenario){
             final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-            if(scenario.isFailed()){
-                scenario.embed(screenshot , "image/png");
+           if(scenario.isFailed()){
+               scenario.embed(screenshot , "image/png");
             }
-           // Driver.closeDriver();
-        }
 
+           // Driver.closeDriver();
+
+
+        }
+        */
 
 
     }
