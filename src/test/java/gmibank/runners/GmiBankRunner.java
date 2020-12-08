@@ -12,7 +12,10 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber.xml"},
         features = "src/test/resources/features",
         glue = "gmibank/stepdefinitions",
-        tags = "@login",
+
+        tags = "@newcustomer",
+
+
         dryRun = false
 )
 public class GmiBankRunner {
