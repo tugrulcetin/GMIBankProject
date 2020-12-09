@@ -2,13 +2,13 @@
 Feature: kullanici registration'dan kayit yapar
 
   Background: kullanici login sayfasina gider
-    Given customer banka sayfasina "http://www.gmibank.com/"  gider
+    Given Employee gmibank login sayfasina "https://gmibank.com/login" gider
     And login linkine tiklar
 
 
   @registration
    Scenario Outline: kullanici kayit olur
-   And register linkine tiklar
+   Given register linkine tiklar
     And kullanici ssn numarasini "<ssn>" girer
     And kullanici firstname "<firstname>" ve lastname "<lastname>" girer
     And kullanici address "<address>" girer

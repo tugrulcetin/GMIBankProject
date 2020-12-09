@@ -7,25 +7,29 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 public class CreateNewCustomerStepDef {
     CreateNewCustomerPage createNewCustomerPage = new CreateNewCustomerPage();
+    @Given("Employee gmibank login sayfasina {string} gider")
+    public void employee_gmibank_login_sayfasina_gider(String login_url) {
+        Driver.getDriver().get(login_url);
 
-    @Given("kullanici gmibank login sayfasina gider")
-    public void kullanici_gmibank_login_sayfasina_gider() {
+    }
+    @Given("Employee UserName {string} girer")
+    public void employee_UserName_girer(String username) {
+        createNewCustomerPage.username.sendKeys(username);
+        Driver.wait(1);
 
-        Driver.getDriver().get("https://gmibank.com/login");
     }
-      @Given("Employee UserName girer")
-    public void employee_UserName_girer() {
-        createNewCustomerPage.username.sendKeys("employee_17");
+
+    @Given("Employee password {string} girer")
+    public void employee_password_girer(String password) {
+        createNewCustomerPage.password.sendKeys(password);
         Driver.wait(1);
+
     }
-    @Given("Employee password girer")
-    public void employee_password_girer() {
-        createNewCustomerPage.password.sendKeys("employee_17.");
-        Driver.wait(1);
-    }
+
     @Given("Employee signIn tiklar")
     public void employee_signIn_tiklar() {
         createNewCustomerPage.signIn.click();
@@ -45,14 +49,14 @@ public class CreateNewCustomerStepDef {
     public void employee_Create_a_new_customer_a_tiklar() {
         createNewCustomerPage.createCustomerButton.click();
     }
-    @Given("Employee SSN textbox'ina daha once kayit yapmis customer'in SSN' ini girer")
-    public void employee_SSN_textbox_ina_daha_once_kayit_yapmis_customer_in_SSN_ini_girer() {
-        createNewCustomerPage.searchSsn.sendKeys("171-17-1717" );
+    @Given("Employee SSN textbox'ina daha once kayit yapmis customer'in SSN' ini {string} girer")
+    public void employee_SSN_textbox_ina_daha_once_kayit_yapmis_customer_in_SSN_ini_girer(String ssn) {
+        createNewCustomerPage.ssnTextBox.sendKeys(ssn );
         createNewCustomerPage.searchButton.click();
         Driver.wait(2);
     }
     @Then("Employee SSN search butonuna tiklayarak customerin adi {string} soyadi {string} email {string} adres {string} mobilenumber {string} ssn {string} kayit bilgilerini karsilastirir")
-    public void employeeSSNSearchButonunaTiklayarakCustomerinadisoyadiEmailAdresMobilenumberSsnKayitBilgileriniKarsilastirir(String firstName, String lastName,String email, String adres, String mobilenumber, String ssn) {
+    public void employeeSSNSearchButonunaTiklayarakCustomerinadisoyadiEmailAdresMobilenumberSsnKayitBilgileriniKarsilastirir(String firstName, String lastName,String email, String adres, String mobilenumber, String verifyssn) {
 
         String expectedfirstName = firstName.trim();
         Driver.wait(2);
@@ -80,11 +84,41 @@ public class CreateNewCustomerStepDef {
         String actualMobileNumber=createNewCustomerPage.mobileTextBox.getAttribute("value").trim();
         Assert.assertEquals(expectedMobileNumber,actualMobileNumber);
 
-        String expectedSsn = ssn.trim();
+        String expectedSsn = verifyssn.trim();
         Driver.wait(2);
-        String actualSsn=createNewCustomerPage.ssnTextBox.getAttribute("value").trim();
+        String actualSsn=createNewCustomerPage.verifySsnTextBox.getAttribute("value").trim();
         Assert.assertEquals(expectedSsn,actualSsn);
     }
+
+    @Then("Employee SSN {string} search butonuna tiklayarak customerin adres bilgilerine {string} sehir {string} ulke {string} eyalet {string} bilgilerini ekler")
+    public void employee_SSN_search_butonuna_tiklayarak_customerin_adres_bilgilerine_sehir_ulke_eyalet_bilgilerini_ekler(String ssn, String adres, String city, String ulke, String eyalet) {
+        createNewCustomerPage.ssnTextBox.sendKeys(ssn);
+        createNewCustomerPage.searchButton.click();
+
+        Driver.wait(2);
+        createNewCustomerPage.adresTextBox.clear();
+        Driver.wait(1);
+        createNewCustomerPage.adresTextBox.sendKeys(adres);
+        Driver.wait(3);
+        Assert.assertFalse(createNewCustomerPage.adresTextBox.getAttribute("value").isEmpty());
+
+        createNewCustomerPage.cityTextBox.sendKeys(city);
+        Driver.wait(3);
+        Assert.assertFalse(createNewCustomerPage.cityTextBox.getAttribute("value").isEmpty());
+
+        Select select = new Select(createNewCustomerPage.countryDropdownTextBox);
+        select.selectByValue(ulke);
+        Driver.wait(2);
+        Assert.assertTrue("USA isDisplayed",select.getFirstSelectedOption().isDisplayed());
+
+        createNewCustomerPage.stateTextBox.sendKeys(eyalet);
+        Driver.wait(1);
+        Assert.assertFalse(createNewCustomerPage.stateTextBox.getAttribute("value").isEmpty());
+
+    }
+
+
+
 }
 
 
