@@ -13,10 +13,10 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "gmibank/stepdefinitions",
 
-        tags = "@newcustomer",
+        tags = "@createAddress",
 
 
-        dryRun = false
+        dryRun = true
 )
 public class GmiBankRunner {
 
