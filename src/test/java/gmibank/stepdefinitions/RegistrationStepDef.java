@@ -12,9 +12,9 @@ public class RegistrationStepDef {
     RegistrationPage registrationPage = new RegistrationPage();
 
 
-    @Given("customer banka sayfasina {string}  gider")
-    public void customer_banka_sayfasina_gider(String gmi_Url) {
-        Driver.getDriver().get(gmi_Url);
+    @Given("kullanici gmibank sayfasina {string} gider")
+public void kullanici_gmibank_sayfasina_gider(String gmi_Url) {
+    Driver.getDriver().get(gmi_Url);
     }
 
     @Given("login linkine tiklar")
