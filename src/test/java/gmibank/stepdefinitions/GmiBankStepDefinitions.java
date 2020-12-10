@@ -10,6 +10,11 @@ public class GmiBankStepDefinitions {
     public void user_go_to(String string) {
         Driver.getDriver().get(string);
 
+
+
+
+        //tugruldan selamlar
+
     }
 
 }

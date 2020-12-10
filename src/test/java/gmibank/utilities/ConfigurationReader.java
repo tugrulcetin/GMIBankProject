@@ -15,6 +15,7 @@ public class ConfigurationReader {
 
         }
     }
+    //  ConfigurationReader.getProperty("username")  ---> manager2
     public static String getProperty(String key){
         return properties.getProperty(key);
     }
