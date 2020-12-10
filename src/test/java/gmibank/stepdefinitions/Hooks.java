@@ -16,22 +16,24 @@ public class Hooks {
         public void setUp(){
             //System.out.println("setUp Çalıştı.");
         }
-        /*
+/*
     @After
         public void tearDown(Scenario scenario){
             final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
            if(scenario.isFailed()){
                scenario.embed(screenshot , "image/png");
             }
+           //  Driver.closeDriver();
+        }
 
-           // Driver.closeDriver();
+*/
 
 
         }
-        */
 
 
-    }
+
+
 
 
 
