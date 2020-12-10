@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SignInPage {
 
+
+
     public SignInPage(){
         PageFactory.initElements(Driver.getDriver(),this);
 
@@ -14,7 +16,20 @@ public class SignInPage {
     @FindBy(xpath = "//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
     public WebElement loginLink;
 
-    @FindBy(xpath = "//*[.='Sign in']")
+    @FindBy(id = "login-item")
     public WebElement SignInLink;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement signInButton;
+
+    @FindBy (xpath = "//span[.='admin17 admin']")
+    public WebElement firstLastName;
+
+    @FindBy(xpath = "//span[.='Cancel']")
+    public WebElement cancelButton;
+
+
+
+
 
 }

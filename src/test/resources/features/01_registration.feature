@@ -2,7 +2,7 @@
 Feature: kullanici registration'dan kayit yapar
 
   Background: kullanici login sayfasina gider
-    Given Employee gmibank login sayfasina "https://gmibank.com/login" gider
+    Given kullanici gmibank sayfasina "https://gmibank.com" gider
     And login linkine tiklar
 
 
