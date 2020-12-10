@@ -12,8 +12,8 @@ Feature: Kullanici sign in yapar
       And kullanici sign in buttonuna tiklar
       Then kullanici gelen ekranda kendi adini "<firstname>" soyadini "<lastname>" gorur
       Examples:
-        | username    | password    | firstname | lastname |
-        | admin_17    | admin_017*  | admin17   | admin    |
+        | username       | password      | firstname    | lastname   |
+        | customer_17    | customer_17.  | customer17   | musteri    |
 
     @signInCancel
     Scenario Outline: kullanici cikis yapar
@@ -22,5 +22,5 @@ Feature: Kullanici sign in yapar
       And kullanici password "<password>" girer
       Then kullanici cancel button na tiklayarak cikar
       Examples:
-        | username    | password    |
-        | admin_17    | admin_017*  |
+        | username    | password         |
+        | customer_17    | customer_17.  |
