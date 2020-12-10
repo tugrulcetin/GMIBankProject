@@ -13,8 +13,10 @@ public class RegistrationStepDef {
 
 
     @Given("kullanici gmibank sayfasina {string} gider")
-    public void kullanici_gmibank_sayfasina_gider(String gmi_Url) {
-        Driver.getDriver().get(gmi_Url);
+
+public void kullanici_gmibank_sayfasina_gider(String gmi_Url) {
+    Driver.getDriver().get(gmi_Url);
+
     }
 
     @Given("login linkine tiklar")

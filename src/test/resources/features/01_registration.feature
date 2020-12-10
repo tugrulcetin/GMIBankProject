@@ -2,8 +2,11 @@
 Feature: kullanici registration'dan kayit yapar
 
   Background: kullanici login sayfasina gider
-    Given kullanici gmibank sayfasina "https://gmibank.com" gider
-    And login linkine tiklar
+
+
+  Given kullanici gmibank sayfasina "https://gmibank.com" gider
+  And login linkine tiklar
+
 
 
   @registration
